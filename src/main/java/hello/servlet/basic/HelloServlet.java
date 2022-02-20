@@ -10,7 +10,12 @@ import java.io.IOException;
 @WebServlet(name = "helloServlet",urlPatterns = "/hello")
 public class HelloServlet extends HttpServlet {
     @Override   //서블릿 호출되면 서비스메서드 호출
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("HelloServlet.service");
+        System.out.println("request = " + request);
+        System.out.println("response = " + response);
+
+        String username=request.getParameter("username");
+        System.out.println("username = " + username);
     }
 }
