@@ -3,12 +3,13 @@ package hello.servlet.basic.request;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "requestHeaderServlet",urlPatterns = "/request-header")
-public class RequestHeaderServlet {
+public class RequestHeaderServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -18,7 +19,7 @@ public class RequestHeaderServlet {
         printEtc(request);
         response.getWriter().write("ok");
     }
-}
+
 
 //start line 정보
 private void printStartLine(HttpServletRequest request) {
@@ -75,6 +76,22 @@ private void printStartLine(HttpServletRequest request) {
         System.out.println("request.getContentLength() = " + request.getContentLength());
         System.out.println("request.getCharacterEncoding() = " + request.getCharacterEncoding());
         System.out.println("--- Header 편의 조회 end ---");
+        System.out.println();
+    }
+
+    //기타 정보
+    private void printEtc(HttpServletRequest request) {
+        System.out.println("--- 기타 조회 start ---");
+        System.out.println("[Remote 정보]");
+        System.out.println("request.getRemoteHost() = " + request.getRemoteHost()); //
+        System.out.println("request.getRemoteAddr() = " + request.getRemoteAddr()); //
+        System.out.println("request.getRemotePort() = " + request.getRemotePort()); //
+        System.out.println();
+        System.out.println("[Local 정보]");
+        System.out.println("request.getLocalName() = " + request.getLocalName()); //
+        System.out.println("request.getLocalAddr() = " + request.getLocalAddr()); //
+        System.out.println("request.getLocalPort() = " + request.getLocalPort()); //
+        System.out.println("--- 기타 조회 end ---");
         System.out.println();
     }
 }
