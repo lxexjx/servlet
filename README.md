@@ -3,6 +3,8 @@ http요청이 오면 was가 response,request객체를 만들어서 servlet에 �
 [http://localhost:8080/hello?username=lee]  query parameter
 # httpservletRequest(객체)
  
+ 
+ sorry... bye..wait plz
 
 
 
