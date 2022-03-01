@@ -1,6 +1,7 @@
 package hello.servlet.web.frontcontroller.v1;
 
-import hello.servlet.web.frontcontroller.v1.controller.MemberSaveController;
+import hello.servlet.web.frontcontroller.v1.controller.MemberListControllerV1;
+import hello.servlet.web.frontcontroller.v1.controller.MemberSaveControllerV1;
 import hello.servlet.web.frontcontroller.v1.controller.MemberformControllerV1;
 
 import javax.servlet.ServletException;
@@ -19,7 +20,7 @@ public class FrontControllerServletV1 extends HttpServlet {
 
     public FrontControllerServletV1() {
         controllerMap.put("front-controller/v1/members/new-form",new MemberformControllerV1());
-        controllerMap.put("front-controller/v1/members/save",new MemberSaveController());
+        controllerMap.put("front-controller/v1/members/save",new MemberSaveControllerV1());
         controllerMap.put("front-controller/v1/members",new MemberListControllerV1());
     }
 
